@@ -1,0 +1,25 @@
+.descrip{
+    padding-left: 10%;
+    padding-top: 1%;
+}
+
+.button{
+    padding-left: 10%;
+    padding-top: 2%;    
+}
+.mybutton{
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.mybutton:hover{
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 45px;
+    background-color: rgb(158, 158, 158);
+}
+

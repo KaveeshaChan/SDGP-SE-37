@@ -1,6 +1,6 @@
 
 import './App.css';
-// import Description from './components/Description/Description';
+import Description from './components/Description/Description';
 import NavBar from './components/navBar/navBar';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       </div>
 
       <div>
-      {/* <Description/> */}
+      <Description/>
       </div>
       
     </div>
