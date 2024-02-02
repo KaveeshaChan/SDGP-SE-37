@@ -1,0 +1,16 @@
+.topic{
+    font-size: 30px;
+    padding-left: 10%;
+    padding-top: 10%;
+  }
+  .navBar{
+    background-color: gray;
+     height: 50px;
+     padding-bottom: 50px;
+  }
+  
+  .description{
+    display: flex;
+    justify-content: space-around;
+  }
+  
