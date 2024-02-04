@@ -1,31 +1,34 @@
-
-import './App.css';
-import Description from './components/Description/Description';
-import NavBar from './components/navBar/navBar';
+import "./global.css";
+import Navbar from "./components/navBar";
+import Description from "./pages/description";
+import AppPage from "./pages/appPage";
+import Contact from "./pages/contact";
 
 function App() {
- 
+  let component;
+  console.log(window.location);
 
+  switch (window.location.pathname) {
+    case "/home":
+      component = <Description />;
+      break;
+    case "/app":
+      component = <AppPage />;
+      break;
+    case "/contact":
+      component = <Contact />;
+      break;
+
+    default:
+      break;
+  }
   return (
-  
-    <div className='app'>
-       <div className='navBar'>
-       <NavBar/>
-       </div>
-      
-      <div>
-      <h1 className='topic'>VEHICLE DAMAGE DETECTION <br></br>COST ESTIMATION</h1>
-      </div>
-
-      <div>
-      <Description/>
-      </div>
-      
+    <div className="bg-gray-900 w-screen h-screen flex flex-col">
+      <Navbar />
+      {component}
+      {/* <h1 className="text-white">Hello</h1> */}
     </div>
-   
-     
-    
-  )
+  );
 }
 
-export default App
+export default App;
