@@ -1,0 +1,34 @@
+.navbar {
+    background-color: #4F4F4F; 
+    color: #fff; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+  } 
+  .navbar-brand {
+    font-size: 2.0rem; 
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .nav-items {
+    font-size: 1.5rem;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left; 
+  }
+  .nav-items li {
+    margin-right: 50px;
+  }
+  .nav-items a {
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 20px;
+    transition: all 0.15s ease;
+  }
+  
