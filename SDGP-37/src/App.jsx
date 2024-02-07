@@ -26,7 +26,7 @@ function App() {
     <div className="bg-gray-900 w-screen h-screen flex flex-col">
       <Navbar />
       {component}
-      {/* <h1 className="text-white">Hello</h1> */}
+      <h1 className="text-white">Vehicle Detection</h1>
     </div>
   );
 }
