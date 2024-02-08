@@ -2,6 +2,22 @@
     margin-bottom: 10px;
     color: #ffffff;
   }
+  .section{
+    display: flex;
+    width: 90%;
+    margin: auto;
+  }
+  .selection{
+    width: 40%;
+    justify-content: space-between;
+  }
+  .image-uploader{
+    width: 50%;
+    justify-content: space-between;
+    background-color: #292929;
+    margin-right: 10%;
+    border-radius: 10px;
+  }
 .brand-type-selector select {
     width: 125px ;
     padding: 10px;
@@ -11,20 +27,22 @@
     background-color: #494848;
   }
   .guidelines-container {
-    margin: 30px ;
-    max-width: 1400px;
-    padding: 100px;
+    margin: auto ;
+    width: 90%;
+    max-width: 90%;
     background-color: #292929;
     border-radius: 10px;
-
+    min-height: 150px;
   }
   
   .guidelines-heading {
     font-size: 1.8rem;
     font-weight: bold;
-    text-align:center;
+    text-align:left;
     line-height: 36px;
     color: #ffffff;
+    padding-left: 20px;
+    padding-top: 15px;
   } 
   .p {
     color: #ffffff;

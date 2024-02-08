@@ -8,6 +8,8 @@ export default function AppPage() {
       {/* ... more guidelines */}
     </div>
     <div className="section">
+      <section className='image-uploader'></section>
+      <section className='selection'>
       <section className="brand-type-selector">
         <h2>Select brand</h2>
         <select name="brand">
@@ -21,6 +23,7 @@ export default function AppPage() {
           <option value="Car1">Car1</option>
           <option value="Car2">Car2</option>
         </select>
+      </section>
       </section>
     </div>
     </>
