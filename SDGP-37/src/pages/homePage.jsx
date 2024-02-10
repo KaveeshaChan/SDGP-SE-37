@@ -10,7 +10,8 @@ function HomePage(){
                     Try FIXMATIC today and experience <br/>
                     the future of hassle-free <br/>
                     damage estimation and repair !</p><br/>
-                    <button className = "text-black border-solid bg-yellow-200 text-xl rounded-xl pl-5 pr-11 cursor-pointer ">Try our solution --------- </button>
+                    
+                    <a href="/app"><button className = "text-black border-solid bg-yellow-200 text-xl rounded-xl pl-5 pr-11 cursor-pointer" >Try our solution --------- </button></a>
                 </div>
                 <div className="pt-8 pl-14">
                     <div ></div>
