@@ -1,7 +1,8 @@
-import './appPage.css';
+
 export default function AppPage() {
   return (
     <>
+
     <div className="guidelines-container">
       <h2 className="guidelines-heading">Guidelines for Users</h2>
       <p className="p">Some descriptive text explaining this guideline.</p>
@@ -31,6 +32,7 @@ export default function AppPage() {
       <button className="proceed-button">Proceed</button>
       </section>
     </div>
+
     </>
   );
 }

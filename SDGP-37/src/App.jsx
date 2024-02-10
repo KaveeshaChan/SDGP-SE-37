@@ -1,6 +1,6 @@
 import "./index.css";
 import Navbar from "./components/navBar";
-import Description from "./pages/description";
+import HomePage from "./pages/homePage";
 import AppPage from "./pages/appPage";
 import Contact from "./pages/contact";
 
@@ -10,7 +10,7 @@ function App() {
 
   switch (window.location.pathname) {
     case "/home":
-      component = <Description />;
+      component = <HomePage />;
       break;
     case "/app":
       component = <AppPage />;
