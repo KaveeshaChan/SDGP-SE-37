@@ -3,6 +3,7 @@ import Navbar from "./components/navBar";
 import HomePage from "./pages/homePage";
 import AppPage from "./pages/appPage";
 import Contact from "./pages/contact";
+import EstimateCost from "./pages/estimateCost";
 
 function App() {
   let component;
@@ -17,6 +18,10 @@ function App() {
       break;
     case "/contact":
       component = <Contact />;
+      break;
+
+      case "/estimatedCost":
+      component = <EstimateCost/>;
       break;
 
     default:
