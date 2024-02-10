@@ -1,3 +1,4 @@
+import './appPage.css';
 export default function AppPage() {
   return (
     <>
