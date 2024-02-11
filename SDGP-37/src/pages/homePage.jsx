@@ -4,7 +4,7 @@ function HomePage(){
         <div>
 
             <div className="flex ">
-                <div className="text-white p-40 text-2xl font-sans">
+                <div className="text-white p-32 text-2xl font-sans">
                     <h2>VEHCILE DEAMAGE DETECTION <br/>AND COST ESTIMATION</h2><br></br>
                     <p>Don't let vehiccle damages slow you down.<br/>
                     Try FIXMATIC today and experience <br/>
