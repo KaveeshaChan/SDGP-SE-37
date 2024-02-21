@@ -10,6 +10,9 @@ function App() {
   console.log(window.location);
 
   switch (window.location.pathname) {
+    case "/":
+      component = <HomePage />;
+      break;
     case "/home":
       component = <HomePage />;
       break;
@@ -20,8 +23,8 @@ function App() {
       component = <Contact />;
       break;
 
-      case "/estimatedCost":
-      component = <EstimateCost/>;
+    case "/estimatedCost":
+      component = <EstimateCost />;
       break;
 
     default:

@@ -11,7 +11,7 @@ function EstimateCost(){
                 <div className="w-6/5 justify-between bg-gray-800 -mr-1.5 rounded-xl min-h-16 mt-12"></div>
             </div>
         </div>
-        <div className="w-3/5 bg-gray-800 ml-32 rounded-xl min-h-36 mt-4">
+        <div className="w-3/5 bg-gray-800 ml-32 rounded-xl min-h-36 mt-4 ">
            <div className="w-4/5 flex text-white justify-between pl-20 pt-4">
             <div>
                 <p className="">Damaged Part</p>
