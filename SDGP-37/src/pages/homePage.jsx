@@ -5,7 +5,7 @@ function HomePage(){
 
             <div className=" font-abc">
             <div className="flex ">
-                <div className="text-white p-28 pl-40">
+                <div className="text-white p-32 pl-40">
                     <h2 className="text-3xl leading-10"><b>VEHICLE DEAMAGE DETECTION <br/> AND  COST ESTIMATION</b></h2><br></br>
                     <p className="leading-6 text-sm">  Say GOODBYE to the stress and uncertainty of assessing car damage. <br/> Drive with confidence knowing you have the ultimate companion <br/>
                     for quick, accurate, and hassle-free vehicle damage assessments.<br/>

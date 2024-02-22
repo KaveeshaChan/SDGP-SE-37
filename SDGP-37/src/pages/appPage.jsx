@@ -30,7 +30,7 @@ export default function AppPage() {
           <option value="Car2">Car2</option>
         </select>
       </section>
-      <a href="estimatedCost"><button className="w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 ml-80 mt-4">Proceed</button></a>
+      <a href="/estmatedCost"><button className="w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 ml-80 mt-4">Proceed</button></a>
       </section>
     </div>
     </div>
