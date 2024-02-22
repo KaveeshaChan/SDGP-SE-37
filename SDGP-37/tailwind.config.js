@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      abc:[ "Inter", "sans-serif"],
+      def:["Protest Revolution", "sans-serif"]
+    }
+    
   },
   plugins: [],
 }
