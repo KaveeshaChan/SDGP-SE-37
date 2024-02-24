@@ -24,7 +24,7 @@ export default function Navbar() {
           
           <li><a href='/home'>Home</a></li>
           <li><a href='/app'>App</a></li>
-          <li><a href='/contact'>Contact us</a></li>
+          <li><a href='/aboutUs'>About us</a></li>
         </ul>
       </div>
       {/* </div> */}

@@ -1,9 +1,5 @@
 import "./index.css";
 import Navbar from "./components/navBar";
-import HomePage from "./pages/homePage";
-import AppPage from "./pages/appPage";
-import Contact from "./pages/contact";
-import EstimateCost from "./pages/estimateCost";
 import { Outlet } from "react-router-dom";
 
 function App() {

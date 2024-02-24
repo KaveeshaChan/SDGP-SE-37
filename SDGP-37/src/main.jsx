@@ -4,7 +4,7 @@ import App from './App.jsx'
 import HomePage from './pages/homePage.jsx';
 import AppPage from './pages/appPage.jsx';
 import EstimateCost from './pages/estimateCost.jsx';
-import Contact from './pages/contact.jsx';
+import AboutUs from './pages/aboutUS.jsx';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path:"/contact",
-        element:<Contact/>
+        path:"/aboutUs",
+        element:<AboutUs/>
       }
     ],
   }
