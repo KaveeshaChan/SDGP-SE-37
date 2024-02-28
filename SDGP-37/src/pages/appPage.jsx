@@ -2,12 +2,10 @@
 export default function AppPage() {
   return (
     <>
-
     <div className="font-abc">
     <div className=" w-4/5 min-w-min bg-gray-800 rounded-xl min-h-52 mt-4 ml-40">
       <h2 className="text-2xl font-bold text-left leading-9 text-white pl-14 pt-10">Guidelines for Users</h2>
       <p className="text-left leading-9 text-white pl-14 pt-4 text-base">Some descriptive text explaining this guideline.</p>
-      {/* ... more guidelines */}
     </div>
     <div className="flex w-4/5 mt-5 ml-40">
       <section className='w-2/5 justify-between bg-gray-800 -mr-0.5 rounded-xl min-h-3'>
