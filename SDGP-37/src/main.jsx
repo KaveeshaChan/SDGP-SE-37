@@ -8,34 +8,35 @@ import Contact from './pages/contact.jsx';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    element:<App />,
-    children:[
-      {
-        path:"/home",
-        element:<HomePage/>,
-      },
-      {
-        path:"/app",
-        element:<AppPage/>
-      },
+// const router = createBrowserRouter([
+//   {
+//     element:<App />,
+//     children:[
+//       {
+//         path:"/home",
+//         element:<HomePage/>,
+//       },
+//       {
+//         path:"/app",
+//         element:<AppPage/>
+//       },
 
-      {
-        path:"/estmatedCost",
-        element:<EstimateCost/>
-      },
+//       {
+//         path:"/estmatedCost",
+//         element:<EstimateCost/>
+//       },
 
-      {
-        path:"/contact",
-        element:<Contact/>
-      }
-    ],
-  }
-]);
+//       {
+//         path:"/contact",
+//         element:<Contact/>
+//       }
+//     ],
+//   }
+// ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router}/>  
+    <App/>
+  {/* <RouterProvider router={router}/>   */}
   </React.StrictMode>
 )
