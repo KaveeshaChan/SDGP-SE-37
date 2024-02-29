@@ -1,4 +1,5 @@
 import Img1 from "../assets/img.jpg"
+
 function HomePage(){
     return(
         <div>
