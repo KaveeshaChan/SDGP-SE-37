@@ -2,7 +2,6 @@
 export default function AppPage() {
   return (
     <>
-
     <div className="font-abc">
     <div className=" sm:ml-20 sm:mt-20 lg:mt-24  w-80 min-w-min sm:w-10/12  bg-gray-800 rounded-xl min-h-32 mt-4 ml-10 xl:h-52 2xl:w-3/5 2xl:h-52 2xl:mt-8 md:min-h-40  md:mt-8">
       <h2 className="sm:text-xl lg:text-3xl font-bold text-left leading-9 text-white pl-14 pt-6 2xl:text-lg xl:text-xl ">Guidelines for Users</h2>
