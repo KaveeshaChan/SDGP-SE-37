@@ -1,12 +1,12 @@
-.navbar {
+/* .navbar {
   background-color: #1c1835; 
   color: #fff; 
-  /* padding: 10px 20px; */
+  padding: 10px 20px; //didint put
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin: 0;
+  margin: 0; //no efffect
   padding: 15px;
   font-family: "Inter", sans-serif;
   
@@ -23,7 +23,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: left; 
+  text-align: left;  //no effect
 }
 .nav-items li {
   margin-right: 20px;
@@ -33,4 +33,4 @@
   text-decoration: none;
   padding: 5px 20px;
   transition: all 0.15s ease;
-}
+} */

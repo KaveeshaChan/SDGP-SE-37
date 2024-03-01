@@ -36,7 +36,7 @@ function App() {
     <>
     <Navbar/>
    
-   <div className="bg-gray-900 w-screen h-screen flex flex-col">
+   <div className="bg-gray-900 min-h-screen min-w-screen flex flex-col overflow-hidden">
    <Outlet/>
    </div>
     </>
