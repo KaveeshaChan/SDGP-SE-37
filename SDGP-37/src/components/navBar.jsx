@@ -36,7 +36,7 @@ export default function Navbar() {
             {!nav ? <X size={20}/> :<Menu size={20}/> }
          
         </div>
-        <div className={!nav ? 'fixed left-0 top-0 w-72 h-full bg-gray-900 border-r border-r-black-900 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+        <div className={nav ? 'fixed left-0 top-0 w-72 h-full bg-gray-900 border-r border-r-black-900 ease-in-out duration-500' : 'fixed left-[-100%]'}>
         <ul className='pt-4'>
           <li><a className="text-4xl no-underline font-def mr-28 ">FIXMATIC</a></li>
           <li className='p-4 border-b border-gray-400 pt-6 '><a href='/'></a></li>
