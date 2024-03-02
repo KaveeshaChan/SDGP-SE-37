@@ -1,4 +1,7 @@
 import './navBar.css';
+import Button from 'react-bootstrap/Button';
+//import { Button } from 'react-bootstrap';
+
 export default function Navbar() {
   const inactiveLink = "flex gap-1 p-1";
   const activeLink = inactiveLink + " bg-white text-gray-800 rounded-l-lg";
