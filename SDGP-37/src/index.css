@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 body{
-    overflow: hidden;
+    overflow: scroll;
     margin: 0;
     
     
