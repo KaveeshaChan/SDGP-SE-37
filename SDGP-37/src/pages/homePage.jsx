@@ -14,7 +14,11 @@ function HomePage(){
                     the future of hassle-free 
                     damage estimation and repair !</p><br/>
                     
-                    <a href="/app"><button className = "text-black border-solid bg-yellow-200 text-xl rounded-xl pl-5 pr-11 cursor-pointer font-def hover:bg-yellow-100" >Try our solution --------- </button></a>
+                    <a href="/app">
+                        <button className="text-black border-solid bg-yellow-200 text-xl rounded-xl pl-5 pr-11 cursor-pointer font-def hover:bg-yellow-100">
+                            Try our solution <span className="text-lg">------------&gt;</span>
+                        </button>
+                    </a>
                 </div>
                 <div className="pl-14">
                     <div ></div>
