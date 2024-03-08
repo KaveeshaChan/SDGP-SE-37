@@ -20,9 +20,9 @@ function HomePage(){
                         </button>
                     </a>
                 </div>
-                <div className="pl-14">
+                <div className="pl-14 flex items-center">
                     <div ></div>
-                    <img src={Img1} className=" h-96 w-96 pt-40"/>
+                    <img src={Img1} className="h-120 w-120"/>
                 </div>
             </div>
             </div>
