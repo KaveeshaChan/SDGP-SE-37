@@ -7,9 +7,9 @@ CORS(app)
 
 @app.route('/main', methods=['GET', 'POST'])
 def hello():
-    data = {"lionel_messi": 0, "maria_sharapova": 1, "roger_federer": 2, "serena_williams": 3, "virat_kohli": 4}
+    data = {"lionel_mes": 0, "maria_sharapova": 1, "roger_federer": 2, "serena_williams": 3, "virat_kohli": 4}
     print(data)
-    return jsonify(data), 401
+    return jsonify(data), 200
 
 
 if __name__ == "__main__":
