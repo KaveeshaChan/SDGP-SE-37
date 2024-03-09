@@ -1,10 +1,7 @@
 import './navBar.css';
 
 
-
 export default function Navbar() {
-
-  
 
 
   // const inactiveLink = "flex gap-1 p-1";

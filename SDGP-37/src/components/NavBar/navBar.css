@@ -14,6 +14,7 @@
   font-size: 2.8rem;
   text-decoration: none;
   color: white;
+  font-family: Algerian, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Apply Algerian font */
 }
 
 .nav-items {
