@@ -11,7 +11,7 @@ function App() {
    <div>
    <Navbar/>
    
-   <div className="bg-gray-900 min-h-screen min-w-screen flex flex-col">
+   <div className="bg-gray-700 min-h-screen min-w-screen flex flex-col" style={{ backgroundColor: "#444548" }}>
    <Outlet/>
    </div>
    </div>

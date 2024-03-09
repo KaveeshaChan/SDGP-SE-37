@@ -1,4 +1,4 @@
-import Img1 from "../assets/img.jpg";
+import Img1 from "../assets/img1.jpg";
 
 function HomePage() {
     return (
@@ -22,7 +22,7 @@ function HomePage() {
                         </a>
                     </div>
                     <div>
-                        <img src={Img1} className="sm:h-96 sm:w-500 sm:pl-6 mt-8" alt="Vehicle Damage" />
+                        <img src={Img1} className="sm:h-auto sm:w-full sm:pl-6 mt-8" alt="Vehicle Damage" /> {/* Set height to auto to maintain aspect ratio */}
                     </div>
                 </div>
             </div>
