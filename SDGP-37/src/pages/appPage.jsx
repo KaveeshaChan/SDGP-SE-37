@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 export default function AppPage() {
-  const [data, setData] = useState({});
+  const [members, setMembers] = useState({});
   useEffect(() => {
-    fetch("/members")
+    fetch("http://127.0.0.1:5000/main")
       .then((res) => {
-        if (res.status == 200) {
-          return Response.json();
-        }
+        console.log(res)
+        return res.json();
       })
-      .then((data) => console.log(data))
-      .then((eror) => console.log(error))
+      .then((data) => {
+        console.log(data);
+        setMembers(data);
+      });
   }, []);
 
   return (
@@ -68,10 +69,10 @@ export default function AppPage() {
         </div>
       </div>
       <div>
-        {typeof data.members === "undefined" ? (
+        {typeof members === "undefined" ? (
           <p>Loading...</p>
         ) : (
-          data.members.map((member, i) => <p key={i}>{member}</p>)
+          <p className="text-white">{JSON.stringify(members)}</p>
         )}
       </div>
     </>
