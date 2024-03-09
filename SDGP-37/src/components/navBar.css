@@ -1,36 +1,42 @@
+/* navBar.css */
+
 .navbar {
-  background-color: #1c1835; 
-  color: #fff; 
-  /* padding: 10px 20px; */
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-  margin: 0;
   padding: 15px;
-  font-family: "Inter", sans-serif;
-  
-} 
-.navbar-brand {
-  font-size: 2.8rem; 
-  text-decoration: none;
-  color: #ffffff;
-  font-family: "Protest Revolution", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.navbar-brand {
+  font-size: 2.8rem;
+  text-decoration: none;
+  color: white;
+}
+
 .nav-items {
   font-size: 1.2rem;
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: left; 
 }
+
 .nav-items li {
   margin-right: 20px;
 }
+
 .nav-items a {
   color: inherit;
   text-decoration: none;
   padding: 5px 20px;
-  transition: all 0.15s ease;
+  transition: all 0.3s ease;
+}
+
+.nav-items a:hover {
+  background-color: grey;
+  color: black;
+  border-radius: 5px;
 }

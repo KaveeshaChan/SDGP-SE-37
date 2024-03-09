@@ -4,39 +4,41 @@ import App from './App.jsx'
 import HomePage from './pages/homePage.jsx';
 import AppPage from './pages/appPage.jsx';
 import EstimateCost from './pages/estimateCost.jsx';
-import Contact from './pages/contact.jsx';
+import AboutUs from './pages/aboutUs.jsx';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-// const router = createBrowserRouter([
-//   {
-//     element:<App />,
-//     children:[
-//       {
-//         path:"/home",
-//         element:<HomePage/>,
-//       },
-//       {
-//         path:"/app",
-//         element:<AppPage/>
-//       },
+const router = createBrowserRouter([
+  {
+    element:<App />,
+    children:[
+      {
+        path:"/",
+        element:<HomePage/>,
+      },
+      {
+        path:"/app",
+        element:<AppPage/>
+      },
 
-//       {
-//         path:"/estmatedCost",
-//         element:<EstimateCost/>
-//       },
+      {
+        path:"/estmatedCost",
+        element:<EstimateCost/>
+      },
 
-//       {
-//         path:"/contact",
-//         element:<Contact/>
-//       }
-//     ],
-//   }
-// ]);
+
+      {
+        path:"/aboutUs",
+        element:<AboutUs/>
+      }
+    ],
+  }
+]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App/>
-  {/* <RouterProvider router={router}/>   */}
+  {<RouterProvider router={router}/>  }
   </React.StrictMode>
 )
+
