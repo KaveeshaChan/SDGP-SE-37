@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   
   
+
   return(
     <>
    <div>
@@ -15,7 +16,17 @@ function App() {
    </div>
    </div>
     </>
+
   );
+  // return(
+  //   <>
+  //   <Navbar/>
+   
+  //  <div className="bg-gray-900 w-screen h-screen flex flex-col">
+  //  <Outlet/>
+  //  </div>
+  //   </>
+  // );
 }
 
 export default App;

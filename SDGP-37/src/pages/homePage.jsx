@@ -1,4 +1,5 @@
 import Img1 from "../assets/img.jpg"
+
 function HomePage(){
     return(
         <div>
@@ -13,10 +14,12 @@ function HomePage(){
                     the future of hassle-free 
                     damage estimation and repair !</p>
                     
+
                     <a href="/app"><button className = "text-black border-solid bg-yellow-200 text-xl rounded-xl mt-4 pr-8 pl-6 lg:pl-5 lg:pr-11 lg:pt-0 cursor-pointer font-def hover:bg-yellow-100 sm:pr-10 sm:pl-4 sm:text-2xl md:text-2xl md:mt-16 md:pl-4 md:pr-8 md:p-1 lg:mt-14 lg:text-2xl xl:mt-10  xl:text-xl 2xl:mt-16 2xl:text-xl" >Try our solution --------- </button></a>
                 </div>
                 <div className="">
                     <img src={Img1} className="sm: h-92 sm: w-92 sm: pl-6 mt-8" />
+
                 </div>
             </div>
             </div>

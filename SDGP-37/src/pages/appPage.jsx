@@ -1,7 +1,9 @@
+import React, { useState, useEffect } from "react";
 
 import { useRef, useState } from "react";
 
 export default function AppPage() {
+
   const inputRef = useRef(null);
   const [image, setImage] = useState(null);
 
@@ -87,6 +89,7 @@ export default function AppPage() {
       </section>
     </div>
     </div>
+
 
     </>
   );
