@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-
 import { useRef, useState } from "react";
 
 export default function AppPage() {
