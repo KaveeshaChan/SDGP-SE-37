@@ -35,7 +35,7 @@ export default function AppPage() {
     <div className="sm:ml-20 sm:mt-8 2xl:flex mt-10 xl:flex">
     {/* flex w-4/5 mt-5 ml-40 */}
     <section
-        className="bg-gray-800 w-80 h-56 ml-10 rounded-xl sm:w-11/12 sm:h-64 md:h-72 lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-1 md:min-h-28 md:w-4/6"
+        className="bg-gray-800 w-80 h-56 ml-10 rounded-xl sm:w-11/12 sm:h-64 md:h-72 lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-1 md:min-h-28 md:w-4/6 2xl:mt-0"
         onClick={HandleImageClick}
       >
         {image ? (
@@ -60,7 +60,7 @@ export default function AppPage() {
       </section>
       <section className='sm:w-5/5 mr-8 justify-between 2xl:pl-48 xl:flex'>
       {/* <section className='sm:w-5/5 mr-8 justify-between '> */}
-      <section className=" mt-8 ml-8  text-black">
+      <section className=" mt-8 ml-8  text-black 2xl:mt-0">
       {/* <section className=" mb-2.5 text-black"> */}
         <h2 className="text-white sm:ml-10 sm:mt-8 md:mt-8 sm:text-xl ">Select brand</h2>
         {/* <h2 className="text-white ml-80">Select brand</h2> */}
