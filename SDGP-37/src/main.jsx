@@ -4,7 +4,7 @@ import App from './App.jsx'
 import HomePage from './pages/homePage.jsx';
 import AppPage from './pages/appPage.jsx';
 import EstimateCost from './pages/estimateCost.jsx';
-import AboutUs from './pages/aboutUS.jsx';
+import AboutUs from './pages/aboutUs.jsx';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
@@ -39,3 +39,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router}/>  
   </React.StrictMode>
 )
+

@@ -1,4 +1,4 @@
-import './navBar.css';
+
 import {Menu, X} from "heroicons-react"
 import React, {useState} from 'react';
 
@@ -33,7 +33,7 @@ export default function Navbar() {
           <li className='mr-5 text-lg'><a href='/aboutUs'>About us</a></li>  
         </ul>
         <div onClick={handleNav} className='block sm:hidden'>
-            {!nav ? <X size={20}/> :<Menu size={20}/> }
+            {!nav ? <Menu size={20}/> :<X size={20}/> }
          
         </div>
         <div className={nav ? 'fixed left-0 top-0 w-72 h-full bg-gray-900 border-r border-r-black-900 ease-in-out duration-500' : 'fixed left-[-100%]'}>

@@ -8,8 +8,7 @@
 @tailwind utilities;
 
 body{
-    overflow: scroll;
-    margin: 0;
-    
-    
+    overflow: hidden;
+    margin: 0;    
 }
+
