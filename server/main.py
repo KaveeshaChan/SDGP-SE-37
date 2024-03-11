@@ -1,14 +1,20 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import base64
-from PIL import Image
-from io import BytesIO
+import os
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 CORS(app)
 
 UPLOAD_FOLDER = 'uploads'
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg'}
 
 @app.route('/main', methods=['GET'])
 def hello():
@@ -18,22 +24,20 @@ def hello():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    data = request.json
-    if 'image' not in data:
+    if 'image' not in request.files:
         return jsonify({"error": "No image provided"}), 400
 
-    # Decode Base64 image data
-    base64_image = data['image']
-    image_data = base64.b64decode(base64_image)
-    
-    # You can save the image to a file or process it as needed
-    # For example, to save it to a file
-    image = Image.open(BytesIO(image_data))
-    image.save('server/artifacts')
+    file = request.files['image']
 
-    # Respond with a JSON success message
-    return jsonify({"message": "Image uploaded successfully"}), 200
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
 
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return jsonify({"message": "Image uploaded successfully"}), 200
+    else:
+        return jsonify({"error": "Invalid file format"}), 400
 
 if __name__ == "__main__":
     app.run(port=5000)
