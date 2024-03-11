@@ -1,51 +1,66 @@
-import base64
-import json
-# import cv2
-import joblib
 import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
 
-__class_name_to_number = {}
-__class_number_to_name = {}
+# Load the saved model
+loaded_model = tf.keras.models.load_model('hood_damage_model_mobilenet.keras')
 
-__model = None
-
-
-def load_saved_artifacts():
-    print("loading model...")
-    global __class_name_to_number
-    global __class_number_to_name
-
-    with open("./artifacts/class_dictionary.json", "r") as f:
-        __class_name_to_number = json.load(f)
-        __class_number_to_name = {v: k for k, v in __class_name_to_number.items()}
-
-        global __model
-        if __model is None:
-            with open("./artifacts/exper_model.pkl", "rb") as f:
-                __model = joblib.load(f)
-        print("loading saved artifacts..done")
+# Define image dimensions
+img_width = 180
+img_height = 180
 
 
-
-def classify_image(image_base64, file_path=None):
-    result = []
-
-    result.append( __model.predict(image_base64,file_path))
-
-    return result
-
-# def get_cv2(b64str):
-#     encoded_data = b64str.split(',')[1]
-#     nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
-#     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-#     return img
+# Function to estimate cost range and decision based on damage severity for hood
+def estimate_hood_cost(severity):
+    if severity == "Minor":
+        return "Repair", "$300 - $800"
+    elif severity == "Moderate":
+        return "Repair", "$800 - $2000"
+    elif severity == "Severe":
+        return "Replace", "Over $2000"
+    else:
+        return "N/A", "N/A"
 
 
-def get_b64_image():
-    with open("b64.txt") as f:
-        return f.read()
+# Load and preprocess the image
+image_path = "server/test.png"
+image = tf.keras.preprocessing.image.load_img(image_path, target_size=(img_height, img_width))
+image_array = tf.keras.preprocessing.image.img_to_array(image)
+image_array = tf.expand_dims(image_array, 0)
 
+# Predict the class of the image
+prediction = loaded_model.predict(image_array)
+predicted_class_index = np.argmax(prediction)
+confidence = np.max(prediction) * 100
 
-if __name__ == '__main__':
-    load_saved_artifacts()
-    # print(classify_image((get_b64_image()), None))
+# Define class names
+class_names = ['undamaged', 'minor damage', 'moderate damage', 'severe damage']
+
+# Check if the predicted class indicates damage
+if class_names[predicted_class_index] == 'undamaged' and confidence >= 80:
+    print("The uploaded image shows no damage.")
+elif confidence < 20:  # Adjust threshold based on your model's performance
+    print("The uploaded image is invalid or unrelated to vehicle damage.")
+else:
+    # Further analyze the confidence level to categorize the damage
+    if confidence >= 80:
+        damage_category = 'Severe'
+    elif confidence >= 60:
+        damage_category = 'Moderate'
+    else:
+        damage_category = 'Minor'
+
+    print("The uploaded image shows", damage_category, "damage with a confidence of", confidence, "%.")
+
+    # Estimate damage cost based on severity
+    repair_decision, cost_range = estimate_hood_cost(damage_category)
+
+    plt.subplot(1, 2, 2)
+    text = f"Vehicle Part: Hood\n"
+    text += f"Predicted Damage: {damage_category}\n"
+    text += f"Confidence: {confidence:.2f}%\n\n"
+    text += f"Repair Decision: {repair_decision}\n"
+    text += f"Cost Range: {cost_range}"
+    plt.text(0.5, 0.5, text, horizontalalignment='center', verticalalignment='center', fontsize=12)
+    plt.axis("off")
+    plt.show()
