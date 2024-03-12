@@ -1,5 +1,7 @@
-function EstimateCost(){
-    return(
+import "/src/index.css";
+
+function EstimateCost() {
+    return (
         <>
         <div className="font-abc xl">
         <h3 className="text-white ml-8 mt-4 text-lg font-bold sm:ml-10 sm:mt-10 lg:text-lg lg:mt-8 xl:mt-6 2xl:text-lg 2xl:mt-4 xl:text-lg">Damaged Areas:</h3>
@@ -35,4 +37,5 @@ function EstimateCost(){
         </>
     );
 }
+
 export default EstimateCost;
