@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from "heroicons-react";
 
+
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleNav = () => {
@@ -11,8 +12,14 @@ const Navbar = () => {
             <nav className="bg-gray-800 overflow-hidden text-white items-center text-center  font-abc">
                 <div className="max-w-7xl md-auto px-4 sm:px-9 lg:px-8">
                     <div className="flex items-center justify-between h-16">   
-                            <div className="flex-shrink-0">
+                            <div className="flex-shrink-0 navbar" >
+                                <div>
+                                 <img src="./public/Fixmatic.svg" alt="" width="40px" height="40px" />
+                                </div>
+                                <div>
                                 <a href="/" className="text-4xl 2xl:text-5xl no-underline font-def">FIXMATIC</a>
+                                </div>
+                                
                             </div>
                             <div className="hidden md:block text-left ml-20 font-medium text">
                                 <div className="ml-10 flex items-baseline space-x-4">
