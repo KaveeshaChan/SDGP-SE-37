@@ -8,14 +8,14 @@ const Navbar = () => {
     };
     return (
         <>
-            <nav className="bg-gray-800 overflow-hidden">
+            <nav className="bg-black flex justify-between items-center p-4 overflow-hidden">
                 <div className="max-w-7xl md-auto px-4 sm:px-9 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                             <div className="flex-shrink-0">
                                 <a href="/" className="text-4xl no-underline font-def mr-28 text-white ">FIXMATIC</a>
                             </div>
                             <div className="hidden md:block text-left ml-20 font-medium text">
-                                <div className="ml-10 flex items-baseline space-x-4">
+                                <div className="ml-10 flex items-baseline space-x-4 text-lg">
                                     <a href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                                     <a href="/app" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">App</a>
                                     <a href="/aboutUs" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
