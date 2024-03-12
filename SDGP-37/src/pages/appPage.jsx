@@ -57,7 +57,7 @@ export default function AppPage() {
         <p>{JSON.stringify(members)}</p>
       </div>
       <div className="font-abc">
-        <div className=" sm:ml-20 sm:mt-20 lg:mt-24  w-80 min-w-min sm:w-10/12  bg-[#37383A] rounded-xl min-h-32 mt-4 ml-10 xl:h-52 2xl:w-3/5 2xl:h-52 2xl:mt-8 md:min-h-40  md:mt-8 cursor-pointer">
+        <div className="sm:ml-10 sm:mt-0 lg:mt-10  w-11/12 min-w-min sm:w-11/12  bg-[#37383A] rounded-xl min-h-32 mt-0 ml-4 xl:h-52 2xl:w-3/5 2xl:h-52  md:min-h-40  md:mt-0 cursor-pointer 2xl:mt-0">
           <h2 className="sm:text-xl lg:text-3xl font-bold text-left leading-9 text-white pl-14 pt-6 2xl:text-lg xl:text-xl ">
             Guidelines for Users
           </h2>
@@ -66,29 +66,26 @@ export default function AppPage() {
           </p>
           {/* ... more guidelines */}
         </div>
-        <div className="sm:ml-20 sm:mt-8 2xl:flex mt-10 xl:flex">
+        <div className="sm:ml-10 sm:mt-8 2xl:flex mt-10 xl:flex xl:mt-0">
           {/* flex w-4/5 mt-5 ml-40 */}
           <section
-            className="bg-[#37383A] w-80 h-56 ml-10 rounded-xl sm:w-11/12 sm:h-64 md:h-72 lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-1 md:min-h-28 md:w-4/6"
+            className="bg-[#37383A] w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
             onClick={HandleImageClick}
           >
             {image ? (
-              <img
-                src={image}
-                alt="Uploaded"
-                className="w-full h-full object-cover rounded-xl"
-              />
-            ) : (
-              <>
-                <label htmlFor="input-file" className="text-white"></label>
-                <input
-                  type="file"
-                  accept="image/jpeg, image/png, image/jpg"
-                  id="input-file"
-                  className="hidden"
-                  ref={inputRef}
-                  onChange={HandleImageChange}
-                ></input>
+          <img src={image} alt="Uploaded" className="w-full h-full object-cover rounded-xl" />
+        ) : (
+          <>
+            <label htmlFor="input-file" className="text-white"></label>
+            <input
+              type="file"
+              accept="image/jpeg, image/png, image/jpg"
+              id="input-file"
+              className="hidden"
+              ref={inputRef}
+              onChange={HandleImageChange}>
+
+              </input>
                 <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-12 xl:pt-24">
                   Drop your image here
                 </h2>
@@ -101,30 +98,30 @@ export default function AppPage() {
               </>
             )}
           </section>
-          <section className="sm:w-5/5 mr-8 justify-between 2xl:pl-48 xl:flex">
+          <section className="sm:w-5/5 mr-8 justify-between 2xl:pl-48 xl:flex xl:ml-10 ">
             {/* <section className='sm:w-5/5 mr-8 justify-between '> */}
-            <section className=" mt-8 ml-8  text-black">
+            <section className=" mt-8 ml-8  text-black sm:ml-0 2xl:mt-0">
               {/* <section className=" mb-2.5 text-black"> */}
-              <h2 className="text-white sm:ml-10 sm:mt-8 md:mt-8 sm:text-xl ">
+              <h2 className="text-white sm:ml-4 sm:mt-10  md:mt-8 sm:text-xl ">
                 Select brand
               </h2>
               {/* <h2 className="text-white ml-80">Select brand</h2> */}
               <select
                 name="brand"
-                className="sm:ml-10 sm:mt-4 w-32 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2"
+                className="sm:ml-4 sm:mt-4 w-32 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2"
               >
                 <option value="Toyota">Toyota</option>
                 <option value="Toyota1">Toyota1</option>
                 <option value="Toyota2">Toyota2</option>
               </select>
-              <h2 className="text-white sm:ml-10 sm:mt-4 sm:text-xl mt-8">
+              <h2 className="text-white sm:ml-4 sm:mt-4 sm:text-xl mt-8">
                 Select type
               </h2>
               <div className="flex ">
                 <div>
                   <select
                     name="type"
-                    className=" sm:ml-10 sm:mt-4 sm:text-xl w-32 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2"
+                    className=" sm:ml-4 sm:mt-4 sm:text-xl w-32 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2"
                   >
                     <option value="Car">Car</option>
                     <option value="Car1">Car1</option>
