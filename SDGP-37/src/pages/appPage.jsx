@@ -57,7 +57,7 @@ export default function AppPage() {
         <p>{JSON.stringify(members)}</p>
       </div>
       <div className="font-abc">
-        <div className=" sm:ml-20 sm:mt-20 lg:mt-24  w-80 min-w-min sm:w-10/12  bg-gray-800 rounded-xl min-h-32 mt-4 ml-10 xl:h-52 2xl:w-3/5 2xl:h-52 2xl:mt-8 md:min-h-40  md:mt-8 cursor-pointer">
+        <div className=" sm:ml-20 sm:mt-20 lg:mt-24  w-80 min-w-min sm:w-10/12  bg-[#37383A] rounded-xl min-h-32 mt-4 ml-10 xl:h-52 2xl:w-3/5 2xl:h-52 2xl:mt-8 md:min-h-40  md:mt-8 cursor-pointer">
           <h2 className="sm:text-xl lg:text-3xl font-bold text-left leading-9 text-white pl-14 pt-6 2xl:text-lg xl:text-xl ">
             Guidelines for Users
           </h2>
@@ -69,7 +69,7 @@ export default function AppPage() {
         <div className="sm:ml-20 sm:mt-8 2xl:flex mt-10 xl:flex">
           {/* flex w-4/5 mt-5 ml-40 */}
           <section
-            className="bg-gray-800 w-80 h-56 ml-10 rounded-xl sm:w-11/12 sm:h-64 md:h-72 lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-1 md:min-h-28 md:w-4/6"
+            className="bg-[#37383A] w-80 h-56 ml-10 rounded-xl sm:w-11/12 sm:h-64 md:h-72 lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-1 md:min-h-28 md:w-4/6"
             onClick={HandleImageClick}
           >
             {image ? (
