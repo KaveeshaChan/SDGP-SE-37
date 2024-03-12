@@ -7,38 +7,40 @@ const Navbar = () => {
         setNav(!nav);
     };
     return (
-        <>
-            <nav className="bg-black flex justify-between items-center p-4 overflow-hidden">
-                <div className="max-w-7xl md-auto px-4 sm:px-9 lg:px-8">
-                    <div className="flex items-center justify-between h-16">
-                            <div className="flex-shrink-0">
-                                <a href="/" className="text-4xl no-underline font-def mr-28 text-white ">FIXMATIC</a>
-                            </div>
-                            <div className="hidden md:block text-left ml-20 font-medium text">
-                                <div className="ml-10 flex items-baseline space-x-4 text-lg">
-                                    <a href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                                    <a href="/app" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">App</a>
-                                    <a href="/aboutUs" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
-                                </div>
-                            </div>
-                        <div className="md:hidden">
-                            <button onClick={handleNav} className="bg-gray-800 p-2 inline-flex items-center justify-center text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
-                                <span className="sr-only">Open main menu</span>
-                                {!nav ? <Menu size={20} /> : <X size={20} />}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className={nav ? 'fixed left-0 top-0 w-22 h-full bg-gray-900 border-r border-r-black-900 ease-in-out duration-100' : 'fixed left-[-100%]'} >
-                    <div className="px-2 pt-2 pb-3 space-y-1">
-                        <a href="/" className="text-4xl no-underline font-def mr-28 text-white">FIXMATIC</a>
-                        <a href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                        <a href="/app" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">App</a>
-                        <a href="/aboutUs" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About us</a>
-                    </div>
-                </div>
-            </nav>
-        </>
+        <nav className="bg-black text-white pt-8 flex justify-between items-center text-center m-0 p-10 font-abc overflow-hidden">
+        {/* <div className=""> */}
+        <div>
+          <a className="text-4xl 2xl:text-5xl no-underline font-abc ">FIXMATIC</a>
+        </div>
+        {/* <div className="flex gap-6 text-xl text-white pl-[60%] flex-wrap"> */}
+        <div>
+          <ul className="hidden sm:flex  text-x  list-none m-0 p-0 text-left  ">
+  
+            <li className='mr-5 text-2xl hover:bg-gray-700 rounded-md px-3 py-2'><a href='/'>Home</a></li>
+            <li className='mr-5 text-2xl hover:bg-gray-700 rounded-md px-3 py-2'><a href='/app'>App</a></li>
+            <li className='mr-5 text-2xl hover:bg-gray-700 rounded-md px-3 py-2'><a href='/aboutUs'>About us</a></li>  
+          </ul>
+          <div onClick={handleNav} className='block sm:hidden'>
+              {!nav ? <X size={20}/> :<Menu size={20}/> }
+  
+          </div>
+          <div className={nav ? 'fixed left-0 top-0 w-72 h-full bg-gray-900 border-r border-r-black-900 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+          <ul className='pt-4'>
+            <li><a className="text-4xl no-underline font-def mr-28 ">FIXMATIC</a></li>
+            <li className='p-4 border-b border-gray-400 pt- '><a href='/'></a></li>
+            <li className='p-4 border-b border-gray-400 text-lg '><a href='/'>Home</a></li>
+            <li className='p-4 border-b border-gray-400 text-lg'><a href='/app'>App</a></li>
+            <li className='p-4 border-b border-gray-400 text-lg'><a href='/aboutUs'>About us</a></li>
+            <div>
+  
+          </div>
+  
+          </ul>
+  
+          </div>
+        </div>
+      </nav>
+      
     );
 };
 export default Navbar;
