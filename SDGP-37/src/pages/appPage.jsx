@@ -26,30 +26,27 @@ export default function AppPage() {
     const file = event.target.files[0];
   
     if (file) {
-      const reader = new FileReader();
-  
-      reader.onload = (e) => {
-        setImage(e.target.result);
-  
-        const base64Image = e.target.result;
-        fetch("http://127.0.0.1:5000/upload", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ image: base64Image }),
+      const formData = new FormData();
+      formData.append("image", file);
+
+      fetch("http://127.0.0.1:5000/upload", {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Image upload failed");
+          }
+          return res.json();
         })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log("Image uploaded successfully:", data);
-            // Handle any response from the backend as needed
-          })
-          .catch((error) => {
-            console.error("Error uploading image:", error);
-            // Handle any errors here
-          });
-      };
-      reader.readAsDataURL(file);
+        .then((data) => {
+          console.log("Image uploaded successfully:", data);
+          // Handle any response from the backend as needed
+        })
+        .catch((error) => {
+          console.error("Error uploading image:", error);
+          // Handle any errors here
+        });
     }
   };  
 
