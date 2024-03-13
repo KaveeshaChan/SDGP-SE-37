@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function AppPage() {
+  const [buttonClicked, setButtonClicked] = useState(false);
   const [members, setMembers] = useState({});
 
   useEffect(() => {
@@ -47,7 +48,12 @@ export default function AppPage() {
           // Handle any errors here
         });
     }
-  };  
+  }; 
+  
+  const handleButtonClick = () => {
+    setButtonClicked(true);
+  };
+
 
   return (
     <>
@@ -107,10 +113,13 @@ export default function AppPage() {
                     <option value="Car2">Car1</option>
                   </select>
                   <a href="/estmatedCost">
-                    <button className="sm:ml-28 sm:mt-6 w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 mt-4 ml-8">
-                      Proceed
-                    </button>
-                  </a>
+                  <button
+                    className={`sm:ml-28 sm:mt-6 w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 mt-4 ml-8 hover:bg-gray-700 ${
+                      buttonClicked ? 'hover:bg-gray-700' : ''
+                    }`}
+                    onClick={handleButtonClick}>
+                    Proceed
+                  </button> </a>
                 </div>
          </section>
         </div>
