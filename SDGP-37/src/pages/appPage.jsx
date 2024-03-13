@@ -101,20 +101,20 @@ export default function AppPage() {
           </section>
           <section className="sm:w-5/5 mr-8 justify-between 2xl:pl-48 xl:flex xl:ml-10 ">
             <div>
-              <select name="brand" className="sm:ml-4 sm:mt-4 w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2">
+              <select name="brand" className="flex sm:ml-4 sm:mt-4 w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2">
                 <option value="Toyota">Select brand</option>
                 <option value="Toyota1">Toyota</option>
                 <option value="Toyota2">Toyota1</option>
               </select>
                   <select name="type"
-                    className=" sm:ml-4 sm:mt-4 sm:text-xl w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2" >
+                    className="flex sm:ml-4 sm:mt-4 sm:text-xl w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2" >
                     <option value="Car">Select type</option>
                     <option value="Car1">Car</option>
                     <option value="Car2">Car1</option>
                   </select>
                   <a href="/estmatedCost">
                   <button
-                    className={`sm:ml-28 sm:mt-6 w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 mt-4 ml-8 hover:bg-gray-700 ${
+                    className={`flex sm:mt-6 w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 mt-4 ml-8 hover:text-white hover:bg-gray-700 ${
                       buttonClicked ? 'hover:bg-gray-700' : ''
                     }`}
                     onClick={handleButtonClick}>
