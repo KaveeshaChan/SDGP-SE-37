@@ -100,7 +100,7 @@ export default function AppPage() {
             )}
           </section>
           <section className="sm:w-5/5 mr-8 justify-between 2xl:pl-48 xl:flex xl:ml-10 ">
-            <div>
+            <div className="content-center">
               <select name="brand" className="flex sm:ml-4 sm:mt-4 w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2">
                 <option value="Toyota">Select brand</option>
                 <option value="Toyota1">Toyota</option>
