@@ -7,6 +7,9 @@ import tensorflow as tf
 
 
 def predict_hood_damage(image_path):
+    import numpy as np
+    import tensorflow as tf
+
     # Your existing code
     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/hood_damage_model_updated.h5')
@@ -39,6 +42,12 @@ def predict_hood_damage(image_path):
     # Define class names
     class_names = ['undamaged', 'minor damage', 'moderate damage', 'severe damage']
 
+    # Initialize result dictionary
+    result = {
+        'Predicted_Class': class_names[predicted_class_index],
+        'Confidence': confidence
+    }
+
     # Check if the predicted class indicates damage
     if class_names[predicted_class_index] != 'undamaged':
         # Further analyze the confidence level to categorize the damage
@@ -50,23 +59,23 @@ def predict_hood_damage(image_path):
             damage_category = 'Minor'
 
         # Estimate damage cost based on severity
-        repair_decision, cost_range =  estimate_hood_cost(damage_category)
+        repair_decision, cost_range = estimate_hood_cost(damage_category)
 
-        return f"""\
-Predicted Class: {class_names[predicted_class_index]}
-Damage Category: {damage_category}
-Confidence: {confidence}
-Repair Decision: {repair_decision}
-Cost Range: {cost_range}"""
+        # Update result dictionary
+        result.update({
+            'Damage_Category': damage_category,
+            'Repair_Decision': repair_decision,
+            'Cost_Range': cost_range
+        })
 
-    else:
-        # Return the undamaged information as a multi-line string
-        return f"""\
-Predicted Class: {class_names[predicted_class_index]}
-Confidence: {confidence}"""
+    return result
 
 
 def predict_front_buffer_damage(image_path):
+    import numpy as np  # Import NumPy here
+    import tensorflow as tf
+
+    # Load the saved model
     # Your existing code
      # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/frontbuffer_damage_model_updated.h5')
@@ -99,6 +108,12 @@ def predict_front_buffer_damage(image_path):
     # Define class names
     class_names = ['undamaged', 'minor damage', 'moderate damage', 'severe damage']
 
+    # Initialize result dictionary
+    result = {
+        'Predicted_Class': class_names[predicted_class_index],
+        'Confidence': confidence
+    }
+
     # Check if the predicted class indicates damage
     if class_names[predicted_class_index] != 'undamaged':
         # Further analyze the confidence level to categorize the damage
@@ -111,6 +126,16 @@ def predict_front_buffer_damage(image_path):
 
         # Estimate damage cost based on severity
         repair_decision, cost_range = estimate_front_buffer_cost(damage_category)
+
+        # Update result dictionary
+        result.update({
+            'Damage_Category': damage_category,
+            'Repair_Decision': repair_decision,
+            'Cost_Range': cost_range
+        })
+
+    return result
+
 
         return f"""\
 Predicted Class: {class_names[predicted_class_index]}
@@ -125,7 +150,21 @@ Cost Range: {cost_range}"""
 Predicted Class: {class_names[predicted_class_index]}
 Confidence: {confidence}"""
 
+        # Update result dictionary
+        result.update({
+            'Damage_Category': damage_category,
+            'Repair_Decision': repair_decision,
+            'Cost_Range': cost_range
+        })
+
+    return result
+
+
 def predict_head_light_damage(image_path):
+    import numpy as np  # Import NumPy here
+    import tensorflow as tf
+
+    # Load the saved model
     # Your existing code
  # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/headlight_damage_model_updated.h5')
@@ -158,6 +197,12 @@ def predict_head_light_damage(image_path):
     # Define class names
     class_names = ['undamaged', 'minor damage', 'moderate damage', 'severe damage']
 
+    # Initialize result dictionary
+    result = {
+        'Predicted_Class': class_names[predicted_class_index],
+        'Confidence': confidence
+    }
+
     # Check if the predicted class indicates damage
     if class_names[predicted_class_index] != 'undamaged':
         # Further analyze the confidence level to categorize the damage
@@ -169,22 +214,20 @@ def predict_head_light_damage(image_path):
             damage_category = 'Minor'
 
         # Estimate damage cost based on severity
-        repair_decision, cost_range =  estimate_headlight_cost(damage_category)
+        repair_decision, cost_range = estimate_headlight_cost(damage_category)
 
-        return f"""\
-Predicted Class: {class_names[predicted_class_index]}
-Damage Category: {damage_category}
-Confidence: {confidence}
-Repair Decision: {repair_decision}
-Cost Range: {cost_range}"""
+        # Update result dictionary
+        result.update({
+            'Damage_Category': damage_category,
+            'Repair_Decision': repair_decision,
+            'Cost_Range': cost_range
+        })
 
-    else:
-        # Return the undamaged information as a multi-line string
-        return f"""\
-Predicted Class: {class_names[predicted_class_index]}
-Confidence: {confidence}"""
-    
+    return result
 
+
+# Assuming image_path is the path to the image you want to predict for each model
+image_path = "uploads\Hood_img_d.png"
 
     
 
@@ -209,6 +252,10 @@ Confidence: {confidence}"""
 # print("Front Buffer Damage Prediction:")
 # print(front_buffer_result)
 
+# Predict for headlight damage model
+head_light_result = predict_head_light_damage(image_path)
+print("Headlight Damage Prediction:")
+print(head_light_result)
 # # Predict for headlight damage model
 # head_light_result = predict_head_light_damage(image_path)
 # print("Headlight Damage Prediction:")
