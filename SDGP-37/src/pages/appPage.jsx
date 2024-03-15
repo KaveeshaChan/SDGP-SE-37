@@ -24,6 +24,15 @@ export default function AppPage() {
   };
   const HandleImageChange = (event) => {
     const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        setImage(e.target.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
   
     if (file) {
       const formData = new FormData();
@@ -40,7 +49,7 @@ export default function AppPage() {
           return res.json();
         })
         .then((data) => {
-          console.log("Image uploaded successfully:", data);
+          console.log("Image uploaded successfullyyyy:", data);
           // Handle any response from the backend as needed
         })
         .catch((error) => {
@@ -81,11 +90,12 @@ export default function AppPage() {
             <label htmlFor="input-file" className="text-white"></label>
             <input
               type="file"
-              accept="image/jpeg, image/png, image/jpg"
+              accept="image/jpeg, image/png, image/jpg, image/jfif"
               id="input-file"
               className="hidden"
               ref={inputRef}
-              onChange={HandleImageChange}>
+              onChange={HandleImageChange}
+               >
               </input>
                 <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-12 xl:pt-24">
                   Drop your image here

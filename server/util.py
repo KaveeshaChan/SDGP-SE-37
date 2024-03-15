@@ -2,11 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-def predict_hood_damage(image_path):
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import tensorflow as tf
+# tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+# tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
+
+def predict_hood_damage(image_path):
+    # Your existing code
     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/hood_damage_model_updated.h5')
 
@@ -66,9 +67,8 @@ Confidence: {confidence}"""
 
 
 def predict_front_buffer_damage(image_path):
-    import tensorflow as tf
-
-    # Load the saved model
+    # Your existing code
+     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/frontbuffer_damage_model_updated.h5')
 
     # Define image dimensions
@@ -125,11 +125,9 @@ Cost Range: {cost_range}"""
 Predicted Class: {class_names[predicted_class_index]}
 Confidence: {confidence}"""
 
-#Headlight Model
 def predict_head_light_damage(image_path):
-    
-
-    # Load the saved model
+    # Your existing code
+ # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/headlight_damage_model_updated.h5')
 
     # Define image dimensions
@@ -187,21 +185,32 @@ Predicted Class: {class_names[predicted_class_index]}
 Confidence: {confidence}"""
     
 
-# Assuming image_path is the path to the image you want to predict for each model
-image_path = "uploads\Hood img_d.png"
 
-# Predict for hood damage model
-hood_result = predict_hood_damage(image_path)
-print("Hood Damage Prediction:")
-print(hood_result)
+    
 
-# Predict for front buffer damage model
-front_buffer_result = predict_front_buffer_damage(image_path)
-print("Front Buffer Damage Prediction:")
-print(front_buffer_result)
+    
 
-# Predict for headlight damage model
-head_light_result = predict_head_light_damage(image_path)
-print("Headlight Damage Prediction:")
-print(head_light_result)
+
+
+
+
+    
+
+# # Assuming image_path is the path to the image you want to predict for each model
+# image_path = "uploads\Hood img_d.png"
+
+# # Predict for hood damage model
+# hood_result = predict_hood_damage(image_path)
+# print("Hood Damage Prediction:")
+# print(hood_result)
+
+# # Predict for front buffer damage model
+# front_buffer_result = predict_front_buffer_damage(image_path)
+# print("Front Buffer Damage Prediction:")
+# print(front_buffer_result)
+
+# # Predict for headlight damage model
+# head_light_result = predict_head_light_damage(image_path)
+# print("Headlight Damage Prediction:")
+# print(head_light_result)
 
