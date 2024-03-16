@@ -1,6 +1,8 @@
+import numpy as np
+import tensorflow as tf
+
 def predict_hood_damage(image_path):
-    import numpy as np
-    import tensorflow as tf
+
 
     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/hood_damage_model_updated.h5')
@@ -60,8 +62,6 @@ def predict_hood_damage(image_path):
         })
 
     return result
-
-
 def predict_front_buffer_damage(image_path):
     import numpy as np  # Import NumPy here
     import tensorflow as tf
@@ -127,9 +127,7 @@ def predict_front_buffer_damage(image_path):
 
 
 def predict_head_light_damage(image_path):
-    import numpy as np  # Import NumPy here
-    import tensorflow as tf
-
+    
     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/headlight_damage_model_updated.h5')
 
@@ -190,20 +188,26 @@ def predict_head_light_damage(image_path):
     return result
 
 
+    
+
+
+    
+
+
+   
+
 # Assuming image_path is the path to the image you want to predict for each model
-image_path = "uploads\Hood_img_d.png"
+# image_path = "uploads\Hood_img_d.png"
 
-# Predict for hood damage model
-hood_result = predict_hood_damage(image_path)
-print("Hood Damage Prediction:")
-print(hood_result)
+# # Predict for hood damage model
+# hood_result = predict_hood_damage(image_path)
+# print("Hood Damage Prediction:")
+# print(hood_result)
 
-# Predict for front buffer damage model
-front_buffer_result = predict_front_buffer_damage(image_path)
-print("Front Buffer Damage Prediction:")
-print(front_buffer_result)
+# # Predict for front buffer damage model
+# front_buffer_result = predict_front_buffer_damage(image_path)
+# print("Front Buffer Damage Prediction:")
+# print(front_buffer_result)
 
-# Predict for headlight damage model
-head_light_result = predict_head_light_damage(image_path)
-print("Headlight Damage Prediction:")
-print(head_light_result)
+# # Predict for headlight damage model
+# head_light_result = predict_head_light_damage(image_path)
