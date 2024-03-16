@@ -1,16 +1,9 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import tensorflow as tf
 
-# tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
-# tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
-
-
 def predict_hood_damage(image_path):
-    import numpy as np
-    import tensorflow as tf
 
-    # Your existing code
+
     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/hood_damage_model_updated.h5')
 
@@ -69,15 +62,11 @@ def predict_hood_damage(image_path):
         })
 
     return result
-
-
 def predict_front_buffer_damage(image_path):
     import numpy as np  # Import NumPy here
     import tensorflow as tf
 
     # Load the saved model
-    # Your existing code
-     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/frontbuffer_damage_model_updated.h5')
 
     # Define image dimensions
@@ -137,36 +126,9 @@ def predict_front_buffer_damage(image_path):
     return result
 
 
-        return f"""\
-Predicted Class: {class_names[predicted_class_index]}
-Damage Category: {damage_category}
-Confidence: {confidence}
-Repair Decision: {repair_decision}
-Cost Range: {cost_range}"""
-
-    else:
-        # Return the undamaged information as a multi-line string
-        return f"""\
-Predicted Class: {class_names[predicted_class_index]}
-Confidence: {confidence}"""
-
-        # Update result dictionary
-        result.update({
-            'Damage_Category': damage_category,
-            'Repair_Decision': repair_decision,
-            'Cost_Range': cost_range
-        })
-
-    return result
-
-
 def predict_head_light_damage(image_path):
-    import numpy as np  # Import NumPy here
-    import tensorflow as tf
-
+    
     # Load the saved model
-    # Your existing code
- # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/headlight_damage_model_updated.h5')
 
     # Define image dimensions
@@ -226,21 +188,16 @@ def predict_head_light_damage(image_path):
     return result
 
 
+    
+
+
+    
+
+
+   
+
 # Assuming image_path is the path to the image you want to predict for each model
-image_path = "uploads\Hood_img_d.png"
-
-    
-
-    
-
-
-
-
-
-    
-
-# # Assuming image_path is the path to the image you want to predict for each model
-# image_path = "uploads\Hood img_d.png"
+# image_path = "uploads\Hood_img_d.png"
 
 # # Predict for hood damage model
 # hood_result = predict_hood_damage(image_path)
@@ -252,12 +209,5 @@ image_path = "uploads\Hood_img_d.png"
 # print("Front Buffer Damage Prediction:")
 # print(front_buffer_result)
 
-# Predict for headlight damage model
-head_light_result = predict_head_light_damage(image_path)
-print("Headlight Damage Prediction:")
-print(head_light_result)
 # # Predict for headlight damage model
 # head_light_result = predict_head_light_damage(image_path)
-# print("Headlight Damage Prediction:")
-# print(head_light_result)
-
