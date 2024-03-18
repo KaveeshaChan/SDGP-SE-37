@@ -49,15 +49,10 @@ function EstimateCost() {
             <div className="sm: w-11/12 mt-2 sm:ml-14 xl:flex xl:w-11/12 lg:flex ">
                 <div className="sm:w-96 sm:ml-0 lg:w-96  sm:min-h-80 lg:mt-8 sm:mt-4 justify-between bg-[#37383A] rounded-xl xl:w-11/12 2xl:w-2/6  w-80 min-h-52 ml-8 2xl:ml-0  2xl:mt-2 ">ll</div>
                 <div className="sm:mt-6 lg:mt-10 lg:ml-10 xl:ml-52 2xl:mt-20 ml-4 mt-6">
-                    <p className="text-white text-base lg:text-base  xl:text-lg 2xl:text-lg sm:text-xl">Vehicle brand:</p><br />
-                    <p className="text-white text-base lg:text-base xl:text-lg 2xl:text-lg sm:text-xl">Vehicle Type:</p><br />
+                    <p className="text-white text-base lg:text-base  xl:text-lg 2xl:text-lg sm:text-xl">Vehicle brand: Toyota</p><br />
+                    <p className="text-white text-base lg:text-base xl:text-lg 2xl:text-lg sm:text-xl">Vehicle Type:Car</p><br />
                     <div className="sm:flex">
-                        <div>
-                            <p className="text-white text-base lg:text-base xl:text-lg 2xl:text-lg sm:text-xl">Vehicle Total Estmated Cost:</p>
-                        </div>
-                        <div>
-                            <div className="sm:w-48 sm:ml-20 bg-[#37383A] rounded-xl min-h-16 mt-4 w-52 2xl:mt-0 2xl:ml-14  "></div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
