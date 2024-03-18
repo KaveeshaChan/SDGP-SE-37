@@ -62,9 +62,9 @@ def predict_hood_damage(image_path):
         })
 
     return result
+   
 def predict_front_buffer_damage(image_path):
-    import numpy as np  # Import NumPy here
-    import tensorflow as tf
+    
 
     # Load the saved model
     loaded_model = tf.keras.models.load_model('server/artifacts/frontbuffer_damage_model_updated.h5')
@@ -124,7 +124,7 @@ def predict_front_buffer_damage(image_path):
         })
 
     return result
-
+    
 
 def predict_head_light_damage(image_path):
     
@@ -186,6 +186,7 @@ def predict_head_light_damage(image_path):
         })
 
     return result
+   
 
 
     
