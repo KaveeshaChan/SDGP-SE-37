@@ -4,69 +4,32 @@ import '/src/index.css';
 
 function EstimateCost() {
     const [predictionResults, setPredictionResults] = useState([]);
-    const [members, setMembers] = useState({})
+    const [members, setMembers] = useState({});
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const apiUrl = 'http://127.0.0.1:5000';
-    //             // const imagePaths = {
-    //             //     hood: 'uploads/Hood_img_d.png',
-    //             //     frontBuffer: 'uploads/Hood_img_d.png',
-    //             //     headlight: 'uploads/Hood_img_d.png'
-    //             // };
-
-    //             const [hoodResult] = await Promise.all([
-    //                 axios.get(`${apiUrl}/predictedResult`),
-    //                 // axios.post(`${apiUrl}/predict_front_buffer_damage`, { image_path: imagePaths.frontBuffer }),
-    //                 // axios.post(`${apiUrl}/predict_head_light_damage`, { image_path: imagePaths.headlight })
-    //             ]);
-
-    //             setPredictionResults([
-    //                 {
-    //                     title: 'Hood',
-    //                     ...hoodResult.data
-    //                 },
-    //                 {
-    //                     title: 'Front Buffer',
-    //                     ...frontBufferResult.data
-    //                 },
-    //                 {
-    //                     title: 'Headlight',
-    //                     ...headlightResult.data
-    //                 }
-    //             ]);
-    //         } catch (error) {
-    //             console.error('Error fetching data:', error);
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, []);
     useEffect(() => {
         fetch("http://127.0.0.1:5000/predictedResult")
-          .then((res) => {
-            console.log(res);
-            return res.json();
-          })
-          .then((data) => {
-            console.log(data);
-            setMembers(data);
-          });
-      }, []);
+            .then((res) => res.json())
+            .then((data) => {
+                setMembers(data);
+                const formattedResults = Object.entries(data).map(([title, result]) => ({
+                    title,
+                    result
+                }));
+                setPredictionResults(formattedResults);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     return (
         <div className="font-abc xl">
-            <p className='text-white'>{JSON.stringify(members)}</p>
             <h3 className="text-white ml-8 mt-6 text-lg font-bold sm:ml-10 sm:mt-6 lg:text-lg lg:mt-8 xl:mt-6 2xl:text-lg 2xl:mt-4 xl:text-lg">Damaged Areas:</h3>
             <div className="sm: w-11/12 mt-2 sm:ml-14 xl:flex xl:w-11/12 lg:flex ">
                 <div className="sm:w-96 sm:ml-0 lg:w-96  sm:min-h-80 lg:mt-8 sm:mt-4 justify-between bg-[#37383A] rounded-xl xl:w-11/12 2xl:w-2/6  w-80 min-h-52 ml-8 2xl:ml-0  2xl:mt-2 ">ll</div>
                 <div className="sm:mt-6 lg:mt-10 lg:ml-10 xl:ml-52 2xl:mt-20 ml-4 mt-6">
                     <p className="text-white text-base lg:text-base  xl:text-lg 2xl:text-lg sm:text-xl">Vehicle brand: Toyota</p><br />
                     <p className="text-white text-base lg:text-base xl:text-lg 2xl:text-lg sm:text-xl">Vehicle Type:Car</p><br />
-                    <div className="sm:flex">
-                        
-                    </div>
                 </div>
             </div>
 
@@ -80,13 +43,21 @@ function EstimateCost() {
                         </tr>
                     </thead>
                     <tbody>
-                        {predictionResults.map((result, index) => (
-                            <tr key={index}>
-                                <td className="border px-4 py-2">{result.title}</td>
-                                <td className="border px-4 py-2">{result.result['Repair_Decision']}</td>
-                                <td className="border px-4 py-2">{result.result['Cost_Range']}</td>
-                            </tr>
-                        ))}
+                        <tr>
+                            <td className="border px-4 py-2">Hood</td>
+                            <td className="border px-4 py-2">{predictionResults[0]?.result['Repair_Decision']}</td>
+                            <td className="border px-4 py-2">{predictionResults[0]?.result['Cost_Range']}</td>
+                        </tr>
+                        <tr>
+                            <td className="border px-4 py-2">Front Buffer</td>
+                            <td className="border px-4 py-2">{predictionResults[1]?.result['Repair_Decision']}</td>
+                            <td className="border px-4 py-2">{predictionResults[1]?.result['Cost_Range']}</td>
+                        </tr>
+                        <tr>
+                            <td className="border px-4 py-2">Headlight</td>
+                            <td className="border px-4 py-2">{predictionResults[2]?.result['Repair_Decision']}</td>
+                            <td className="border px-4 py-2">{predictionResults[2]?.result['Cost_Range']}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
