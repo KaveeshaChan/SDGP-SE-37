@@ -198,7 +198,6 @@ def predict_head_light_damage(image_path):
    
 
 # Assuming image_path is the path to the image you want to predict for each model
-# image_path = "uploads\Hood_img_d.png"
 
 # # Predict for hood damage model
 # hood_result = predict_hood_damage(image_path)
