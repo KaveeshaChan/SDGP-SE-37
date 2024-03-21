@@ -66,10 +66,11 @@ export default function AppPage() {
 
   return (
     <>
+      <div >
       <div>
         <p>{JSON.stringify(members)}</p>
       </div>
-      <div className="font-abc">
+      <div className="font-abc ">
         <div className="sm:ml-10 sm:mt-0 lg:mt-10  w-11/12 min-w-min sm:w-11/12  bg-[#37383A] rounded-xl min-h-32 mt-0 ml-4 xl:h-52 2xl:w-3/5 2xl:h-52  md:min-h-40  md:mt-0 cursor-pointer 2xl:mt-0">
           <h2 className="sm:text-xl lg:text-3xl font-bold text-left leading-9 text-white pl-14 pt-6 2xl:text-lg xl:text-xl ">
             Guidelines for Users
@@ -127,12 +128,13 @@ export default function AppPage() {
                     className={`flex sm:mt-6 w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 mt-4 ml-8 hover:text-white hover:bg-gray-700 ${
                       buttonClicked ? 'hover:bg-gray-700' : ''
                     }`}
-                    onClick={handleButtonClick}>
+                    >
                     Proceed
                   </button> </a>
                 </div>
          </section>
         </div>
+      </div>
       </div>
     </>
   );
