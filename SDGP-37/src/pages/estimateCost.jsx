@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import "/src/index.css";
 import Navbar from "../components/NavBar/navBar";
@@ -76,6 +77,7 @@ function EstimateCost() {
       </div>
     </div>
   );
+
 }
 
 export default EstimateCost;

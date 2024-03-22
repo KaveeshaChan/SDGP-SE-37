@@ -6,9 +6,10 @@
 @tailwind utilities;
 
 body {
+
   font-family: "Poppins", sans-serif;
   overflow: hidden;
   margin: 0;
   width: 100%;
 }
-/* This ensures the image covers the entire background */
+

@@ -1,3 +1,4 @@
+
 import BgVideo from "../assets/video.mp4";
 import { useState } from "react";
 import { Menu, X } from "heroicons-react";
@@ -110,6 +111,7 @@ function HomePage() {
       </div>
     </>
   );
+
 }
 
 export default HomePage;

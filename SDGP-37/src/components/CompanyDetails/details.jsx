@@ -1,3 +1,4 @@
+
 function Details(props) {
   return (
     <>
@@ -11,6 +12,7 @@ function Details(props) {
       </div>
     </>
   );
+
 }
 
 export default Details;

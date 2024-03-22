@@ -186,13 +186,4 @@ def predict_head_light_damage(image_path):
         })
 
     return result
-   
-
-
-    
-
-
-    
-
-
-   
+ 

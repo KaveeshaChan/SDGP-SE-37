@@ -58,11 +58,15 @@ export default function AppPage() {
           // Handle any errors here
         });
     }
+
   };
+
 
   return (
     <>
+      <div >
       <div>
+
         <div>
           <p>{JSON.stringify(members)}</p>
         </div>
@@ -140,6 +144,7 @@ export default function AppPage() {
             </section>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
