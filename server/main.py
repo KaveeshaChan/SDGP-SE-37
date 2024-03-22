@@ -60,10 +60,11 @@ def upload():
 @app.route('/predictedResult', methods=['POST','GET'])
 def predict_hood_damage_with_uploaded_image():
     filePath = 'uploads/IMAGE.png'
-    buffer_result = predict_front_buffer_damage(filePath)
     hood_result = predict_hood_damage(filePath)
+    buffer_result = predict_front_buffer_damage(filePath)
     headlight_result = predict_head_light_damage(filePath)
-    return jsonify(buffer_result,hood_result,headlight_result),200
+    result = {"hood":hood_result,"buffer":buffer_result, "headlight": headlight_result}
+    return jsonify(result),200
     # Get the file_path from the upload response
     # upload_response = upload()
     
