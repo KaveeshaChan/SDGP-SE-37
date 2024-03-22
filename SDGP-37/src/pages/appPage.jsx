@@ -129,7 +129,7 @@ export default function AppPage() {
                 </select>
                 <a href="/estmatedCost">
                   <button
-                    className={`transition duration-300 text-white rounded-lg p-4 m-2 w-64 bg-slate-900 ${
+                    className={`transition duration-300 text-white rounded-lg p-4 m-2 w-64 bg-slate-900 hover:bg-slate-500 ${
                       buttonClicked ? "hover:bg-gray-700" : ""
                     }`}
                   >
