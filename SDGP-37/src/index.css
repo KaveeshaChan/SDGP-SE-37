@@ -6,12 +6,10 @@
 @tailwind utilities;
 
 body {
-  overflow: scroll;
+
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
   margin: 0;
   width: 100%;
-  background-image: url("./assets/img2.jpg");
-  background-size: cover; /* This ensures the image covers the entire background */
-  background-repeat: no-repeat;
-  height: 200%;
-  opacity: 70;
 }
+

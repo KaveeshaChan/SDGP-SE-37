@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Navbar from "../components/NavBar/navBar";
 
 export default function AppPage() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -33,7 +34,7 @@ export default function AppPage() {
 
       reader.readAsDataURL(file);
     }
-  
+
     if (file) {
       const formData = new FormData();
       formData.append("image", file);
@@ -57,10 +58,7 @@ export default function AppPage() {
           // Handle any errors here
         });
     }
-  }; 
-  
-  const handleButtonClick = () => {
-    setButtonClicked(true);
+
   };
 
 
@@ -68,71 +66,83 @@ export default function AppPage() {
     <>
       <div >
       <div>
-        <p>{JSON.stringify(members)}</p>
-      </div>
-      <div className="font-abc ">
-        <div className="sm:ml-10 sm:mt-0 lg:mt-10  w-11/12 min-w-min sm:w-11/12  bg-[#37383A] rounded-xl min-h-32 mt-0 ml-4 xl:h-52 2xl:w-3/5 2xl:h-52  md:min-h-40  md:mt-0 cursor-pointer 2xl:mt-0">
-          <h2 className="sm:text-xl lg:text-3xl font-bold text-left leading-9 text-white pl-14 pt-6 2xl:text-lg xl:text-xl ">
-            Guidelines for Users
-          </h2>
-          <p className="lg:text-2xl lg:pt-8 text-left leading-9 text-white pl-14 pt-4 text-base 2xl:text-lg xl:text-lg">
-            Some descriptive text explaining this guideline.
-            </p>
-          {/* ... more guidelines */}
+
+        <div>
+          <p>{JSON.stringify(members)}</p>
         </div>
-        <div className="sm:ml-10 sm:mt-8 2xl:flex mt-10 xl:flex xl:mt-0">
-          <section
-            className="bg-[#37383A] w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
-            onClick={HandleImageClick}>
-            {image ? (
-          <img src={image} alt="Uploaded" className="w-full h-full object-cover rounded-xl" />
-        ) : (
-          <>
-            <label htmlFor="input-file" className="text-white"></label>
-            <input
-              type="file"
-              accept="image/jpeg, image/png, image/jpg, image/jfif"
-              id="input-file"
-              className="hidden"
-              ref={inputRef}
-              onChange={HandleImageChange}
-               >
-              </input>
-                <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-12 xl:pt-24">
-                  Drop your image here
-                </h2>
-                <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-4">
-                  -or-
-                </h2>
-                <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-4">
-                  Click to Upload
-                </h2>
-              </>
-            )}
-          </section>
-          <section className="sm:w-5/5 mr-8 justify-between 2xl:pl-48 xl:flex xl:ml-10 ">
-            <div className="content-center">
-              <select name="brand" className="flex sm:ml-4 sm:mt-4 w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2">
-                <option value="Toyota">Select brand</option>
-                <option value="Toyota1">Toyota</option>
-                <option value="Toyota2">Toyota1</option>
-              </select>
-                  <select name="type"
-                    className="flex sm:ml-4 sm:mt-4 sm:text-xl w-33 p-2.5 border border-solid border-white rounded-3xl text-xl bg-gray-500 mt-2" >
-                    <option value="Car">Select type</option>
-                    <option value="Car1">Car</option>
-                    <option value="Car2">Car1</option>
-                  </select>
-                  <a href="/estmatedCost">
+        <div className="font-abc">
+          <Navbar />
+
+          <div className=" bg-slate-900 rounded-lg mx-7 p-3">
+            <h2 className="text-white ml-2 text-md md:text-lg lg:text-xl mb-4">
+              Guidelines for Users
+            </h2>
+            <p className="text-white ml-7 text-sm md:text-md lg:text-lg xl:text-lg">
+              <dl>
+                <li>Upload an image of the damaged area.</li>
+                <li> Make sure it is a clear image.</li>
+                <li>Select your vehicle type and brand</li>
+                <li>Hit Proceed</li>
+              </dl>
+            </p>
+            {/* ... more guidelines */}
+          </div>
+          <div className="flex mt-8 content-center justify-center flex-col md:flex-row lg:flex-row xl:flex-row">
+            <section
+              className="bg-slate-900 w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
+              onClick={HandleImageClick}
+            >
+              {image ? (
+                <img
+                  src={image}
+                  alt="Uploaded"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              ) : (
+                <>
+                  <label htmlFor="input-file" className="text-white"></label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg, image/jfif"
+                    id="input-file"
+                    className="hidden"
+                    ref={inputRef}
+                    onChange={HandleImageChange}
+                  ></input>
+                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-12 xl:pt-24">
+                    Drop your image here
+                  </h2>
+                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-4">
+                    -or-
+                  </h2>
+                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-4">
+                    Click to Upload
+                  </h2>
+                </>
+              )}
+            </section>
+            <section className="flex">
+              <div className="flex flex-col mt-8 text-xl ml-16">
+                <select name="brand" className="p-4 m-2 w-64 rounded-lg">
+                  <option value="Toyota">Select brand</option>
+                  <option value="Toyota1">Toyota</option>
+                </select>
+                <select name="type" className="p-4 m-2 w-64 rounded-lg">
+                  <option value="Car">Select type</option>
+                  <option value="Car1">Car</option>
+                </select>
+                <a href="/estmatedCost">
                   <button
-                    className={`flex sm:mt-6 w-32 p-2.5 border-white rounded-3xl text-xl bg-gray-500 mt-4 ml-8 hover:text-white hover:bg-gray-700 ${
-                      buttonClicked ? 'hover:bg-gray-700' : ''
+                    className={`transition duration-300 text-white rounded-lg p-4 m-2 w-64 bg-slate-900 hover:bg-slate-500 ${
+                      buttonClicked ? "hover:bg-gray-700" : ""
                     }`}
-                    >
+                  >
                     Proceed
-                  </button> </a>
-                </div>
-         </section>
+                  </button>
+                </a>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
       </div>
