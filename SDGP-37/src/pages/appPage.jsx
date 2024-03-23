@@ -60,6 +60,9 @@ export default function AppPage() {
     }
 
   };
+  const handleButtonClick = () => {
+    setButtonClicked(true);
+  };
 
 
   return (
@@ -68,7 +71,6 @@ export default function AppPage() {
       <div>
 
         <div>
-          <p>{JSON.stringify(members)}</p>
         </div>
         <div className="font-abc">
           <Navbar />
@@ -88,27 +90,22 @@ export default function AppPage() {
             {/* ... more guidelines */}
           </div>
           <div className="flex mt-8 content-center justify-center flex-col md:flex-row lg:flex-row xl:flex-row">
-            <section
-              className="bg-slate-900 w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
-              onClick={HandleImageClick}
-            >
-              {image ? (
-                <img
-                  src={image}
-                  alt="Uploaded"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              ) : (
-                <>
+          <section
+            className="bg-[#37383A] w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
+            onClick={HandleImageClick}>
+            {image ? (
+          <img src={image} alt="Uploaded" className="w-full h-full object-cover rounded-xl" />
+        ) : (
+          <>
                   <label htmlFor="input-file" className="text-white"></label>
-                  <input
-                    type="file"
-                    accept="image/jpeg, image/png, image/jpg, image/jfif"
-                    id="input-file"
-                    className="hidden"
-                    ref={inputRef}
-                    onChange={HandleImageChange}
-                  ></input>
+            <input
+              type="file"
+              accept="image/jpeg, image/png, image/jpg, image/jfif"
+              id="input-file"
+              className="hidden"
+              ref={inputRef}
+              onChange={HandleImageChange}
+               ></input>
                   <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-12 xl:pt-24">
                     Drop your image here
                   </h2>
