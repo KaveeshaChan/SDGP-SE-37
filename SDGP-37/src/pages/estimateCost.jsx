@@ -1,40 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import '/src/index.css';
-import carImage from "../../../uploads/IMAGE.png"
-import Navbar from '../components/NavBar/navBar';
-import { ClipLoader } from 'react-spinners'; // Import ClipLoader from react-spinners
+import React, { useState, useEffect } from 'react';  // Import necessary modules from React
+import '/src/index.css';  // Import the custom CSS file
+import carImage from "../../../uploads/IMAGE.png"  // Import the car image from the specified path
+import Navbar from '../components/NavBar/navBar';  // Import the Navbar component
+import { ClipLoader } from 'react-spinners';  // Import ClipLoader from react-spinners
 
 function EstimateCost() {
-    const [predictionResults, setPredictionResults] = useState({});
-    const [members, setMembers] = useState({});
-    const [loading, setLoading] = useState(true);
+    const [predictionResults, setPredictionResults] = useState({});  // Initialize state for prediction results
+    const [members, setMembers] = useState({});  // Initialize state for members
+    const [loading, setLoading] = useState(true);  // Initialize state for loading indicator
 
     useEffect(() => {
+        // Fetch predicted results from the backend API when the component mounts
         fetch("http://127.0.0.1:5000/predictedResult")
-            .then((res) => res.json())
+            .then((res) => res.json())  // Convert response to JSON format
             .then((data) => {
-                setMembers(data);
-                console.log(data)
+                setMembers(data);  // Set the fetched data to the members state
+                console.log(data);  // Log the fetched data to the console
+                // Format the prediction results data for display
                 const formattedResults = Object.entries(data).map(([title, result]) => ({
                     title,
                     result
                 }));
-                setPredictionResults(formattedResults);
-                setLoading(false);
-                console.log(formattedResults)
+                setPredictionResults(formattedResults);  // Set the formatted results to the state
+                setLoading(false);  // Set loading to false after fetching and processing data
+                console.log(formattedResults);  // Log the formatted results to the console
             })
             .catch((error) => {
-                console.error('Error fetching data:', error);
-                setLoading(false);
+                console.error('Error fetching data:', error);  // Log any errors that occur during fetching
+                setLoading(false);  // Set loading to false in case of an error
             });
-    }, []);
+    }, []);  // Empty dependency array ensures useEffect runs only once on component mount
 
     return (
         <div className="font-abc xl">
             <Navbar />
             <h3 className="text-white ml-8 mt-6 text-lg font-bold sm:ml-10 sm:mt-6 lg:text-lg lg:mt-8 xl:mt-6 2xl:text-lg 2xl:mt-4 xl:text-lg">Uploaded Image:</h3>
             <div className="sm: w-11/12 mt-2 sm:ml-14 xl:flex xl:w-11/12 lg:flex ">
-                <div className=" bg-[#37383A] 2xl:ml-40 w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8">
+                <div className=" bg-slate-900 2xl:ml-40 w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8">
                     {loading ? ( // Show loading spinner if loading is true
                         <div className="flex items-center justify-center w-full h-full">
                             <ClipLoader color="#FFFFFF" loading={loading} size={70} /> {/* Use ClipLoader from react-spinners */}

@@ -4,6 +4,8 @@ import Navbar from "../components/NavBar/navBar";
 export default function AppPage() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [members, setMembers] = useState({});
+  const [imageUploaded, setImageUploaded] = useState(false);
+
 
   useEffect(() => {
     fetch("http://127.0.0.1:5000/main")
@@ -27,11 +29,12 @@ export default function AppPage() {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
-
+  
       reader.onload = (e) => {
         setImage(e.target.result);
+        setImageUploaded(true); // Set imageUploaded to true
       };
-
+  
       reader.readAsDataURL(file);
     }
 
@@ -75,7 +78,7 @@ export default function AppPage() {
         <div className="font-abc">
           <Navbar />
 
-          <div className=" bg-slate-900 rounded-lg mx-7 p-3">
+          <div className=" bg-slate-900 rounded-lg mx-7 p-3 mt-10">
             <h2 className="text-white ml-2 text-md md:text-lg lg:text-xl mb-4">
               Guidelines for Users
             </h2>
@@ -91,7 +94,7 @@ export default function AppPage() {
           </div>
           <div className="flex mt-8 content-center justify-center flex-col md:flex-row lg:flex-row xl:flex-row">
           <section
-            className="bg-[#37383A] w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
+            className="bg-slate-900 w-10/12 h-56 ml-8 rounded-xl sm:w-10/12 sm:h-64  md:h-80 md:w-10/12  lg:w-5/6 lg:mt-10 xl:h-80  xl:w-6/12 2xl:w-2/5 2xl:h-72 sm:ml-0 md:min-h-28 2xl:mt-8"
             onClick={HandleImageClick}>
             {image ? (
           <img src={image} alt="Uploaded" className="w-full h-full object-cover rounded-xl" />
@@ -106,13 +109,7 @@ export default function AppPage() {
               ref={inputRef}
               onChange={HandleImageChange}
                ></input>
-                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-12 xl:pt-24">
-                    Drop your image here
-                  </h2>
-                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-4">
-                    -or-
-                  </h2>
-                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-4">
+                  <h2 className="font-bold text-2xl text-center leading-9 text-white pl-5 pt-32">
                     Click to Upload
                   </h2>
                 </>
@@ -129,13 +126,15 @@ export default function AppPage() {
                   <option value="Car1">Car</option>
                 </select>
                 <a href="/estmatedCost">
-                  <button
-                    className={`transition duration-300 text-white rounded-lg p-4 m-2 w-64 bg-slate-900 hover:bg-slate-500 ${
-                      buttonClicked ? "hover:bg-gray-700" : ""
-                    }`}
-                  >
-                    Proceed
-                  </button>
+                <button
+                className={`transition duration-300 text-white rounded-lg p-4 m-2 w-64 bg-slate-900 hover:bg-slate-500 ${
+                  buttonClicked ? "hover:bg-gray-700" : ""
+                }`}
+                disabled={!imageUploaded} // Disable button if imageUploaded is false
+                onClick={handleButtonClick}
+              >
+                Proceed
+              </button>
                 </a>
               </div>
             </section>
