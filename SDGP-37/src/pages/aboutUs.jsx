@@ -1,9 +1,12 @@
 import Details from "../components/CompanyDetails/details";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom for navigation
+import Navbar from '../components/NavBar/navBar';
+
 
 function AboutUs() {
   return (
     <div>
+      <Navbar/>
       {/* Section 1: Our Mission */}
       <div>
         <section className="mt-0">
