@@ -11,7 +11,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=" text-white pt-8 flex justify-between items-center text-center m-0 p-10  overflow-hidden ">
+      <nav className=" text-white pt-8 flex justify-between items-center text-center m-0 p-10  overflow-hidden bg-black" >
         {/* <div className=""> */}
         <div>
           <a className="text-4xl 2xl:text-5xl no-underline font-abc ">
