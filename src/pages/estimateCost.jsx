@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';  // Import necessary modules from React
 import '/src/index.css';  // Import the custom CSS file
-import carImage from "../../../uploads/IMAGE.png"  // Import the car image from the specified path
+import carImage from "../../src/assets/IMAGE.png"  // Import the car image from the specified path
 import Navbar from '../components/NavBar/navBar';  // Import the Navbar component
 import { ClipLoader } from 'react-spinners';  // Import ClipLoader from react-spinners
+import { SpinnerComponent } from 'react-spinners';
 
 function EstimateCost() {
     const [predictionResults, setPredictionResults] = useState({});  // Initialize state for prediction results
